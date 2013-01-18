@@ -5,10 +5,10 @@ Export your whole sitemap, content and images from your site built with Middlema
 
 ## Usage
 
-Just move the folder "c5" from this repo into the `source`-folder of
+Just move the folder **c5** from this repo into the **source**-folder of
 your Middleman site and the next time you execute `middleman build`
-you'll find a folder of the same name inside your `build`-directory,
-which is the complete Starting Point for Concrete5 already.
+you'll find a folder of the same name inside your **build**-directory,
+which is the complete **Starting Point** for Concrete5 already.
 
-It's important to keep the name of this folder -- "c5" -- as it is
-connected to the class-name inside controller.php.
+It's important to keep the name of this folder -- **c5** -- as it is
+connected to the class-name of this Starting Point.
