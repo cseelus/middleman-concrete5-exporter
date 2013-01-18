@@ -1,0 +1,36 @@
+<% pages = sitemap.resources.find_all{|p| p.source_file.match(/\.html/) } %>
+<?xml version="1.0"?>
+<concrete5-cif version="1.0">
+  <pagetypes>
+    <pagetype icon="main.png" handle="main" name="Main" package="" />
+  </pagetypes>
+
+  <pages>
+  <% pages.each do |p| %>
+    <%
+      page_title       = p.metadata[:page]['title']
+      page_path        = '/' + p.path.chomp(p.ext)
+      page_path        = '' if page_path == '/index'
+      page_content     = p.render layout: false
+      page_description = p.metadata[:page]['description']
+    %>
+    <page name="<%= page_title %>" path="<%= page_path %>" pagetype="main" description="<%= page_description %>">
+      <area name="Main">
+        <block type="content">
+          <data table="btContentLocal">
+            <record>
+              <content><![CDATA[<%= page_content %>]]></content>
+            </record>
+          </data>
+        </block>
+      </area>
+    </page>
+  <% end %>
+  </pages>
+
+  <config>
+    <ENABLE_CACHE>0</ENABLE_CACHE>
+    <ENABLE_OVERRIDE_CACHE>0</ENABLE_OVERRIDE_CACHE>
+    <FULL_PAGE_CACHE_GLOBAL>0</FULL_PAGE_CACHE_GLOBAL>
+  </config>
+</concrete5-cif>

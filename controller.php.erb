@@ -1,0 +1,11 @@
+<?php
+class C5StartingPointPackage extends StartingPointPackage {
+  protected $pkgHandle = 'c5';
+  public function getPackageName() {
+    return t('<%= @project_name %> (handle name for scripts, etc. is <code>c5</code>)');
+  }
+  public function getPackageDescription() {
+    return t('The starting point package for <strong><%= @project_name %></strong>, built with Middleman.');
+  }
+}
+?>
