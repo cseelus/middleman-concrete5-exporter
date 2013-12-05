@@ -5,10 +5,22 @@ Export your whole sitemap, content and images from your site built with Middlema
 
 ## Usage
 
-Just move the folder *c5* from this repo into the *source*-folder of
-your Middleman site and the next time you execute `middleman build`
-you'll find a folder of the same name inside your *build*-directory,
-which is the complete **Starting Point** for Concrete5 already.
+Fist, drop in this folder (clone it) into your Middlemans *source*-directory and run `middleman build`.
+
+You'll find a folder of the same name inside your *build*-directory, which is the complete **Starting Point** for Concrete5 already.
 
 It's important to keep the name of this folder -- *c5* -- as it is
 connected to the class-name of this Starting Point.
+
+
+## Check *content.xml* before importing
+
+1. Are the `<page>`'s correctly named?
+2. Are the `<page>` pats correct (especially for the homepage)?
+3. Do the `<page>` entities contain the content and only the content of the pages you want? 
+4. Are the image-paths identical to where you will put your images?
+5. Do the `<page>` entities attributes like `description` contain only UTF8 chars?
+
+
+## To-Do (if possible)
+- Get correct order of pages for the page tree, maybe from a pagenav file
